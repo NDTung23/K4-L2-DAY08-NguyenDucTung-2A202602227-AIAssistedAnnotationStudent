@@ -1,0 +1,28 @@
+LÔ ẢNH CẦN GÁN NHÃN, VÒNG 1
+
+Lab chỉ có một lớp `car`, gồm mọi phương tiện từ 4 bánh trở lên (xe con, SUV, bán tải,
+xe van, xe tải, xe buýt). Mỗi xe được đánh dấu bằng một box chữ nhật ôm sát thân xe,
+không tính vệt sáng của đèn pha trên mặt đường. Xe ở quá xa, chỉ còn hai chấm đèn (box cao
+dưới khoảng 16 pixel), thì gán hay không đều được vì không được tính khi chấm điểm.
+
+Các box có sẵn trong lô là nhãn gợi ý do mô hình đề xuất (độ tin cậy từ 0.25). Bạn cần:
+  - xoá box sai: không phải xe, box trùng nhau, box ôm vệt đèn;
+  - chỉnh lại box bị lệch;
+  - thêm box cho xe mô hình bỏ sót, thường là xe nhỏ, xe màu tối hoặc xe bị che.
+
+Công cụ gợi ý (không bắt buộc, dùng công cụ nào cũng được):
+  AnyLabeling  https://github.com/vietanhdev/anylabeling
+      Vào File > Open Dir, chọn thư mục images/train. Box gợi ý hiện sẵn từ file .json,
+      bạn sửa trực tiếp, phần mềm tự lưu.
+  CVAT         https://github.com/cvat-ai/cvat
+      Tạo task với các ảnh trong images/train và nhãn `car`. Nén cả thư mục này thành
+      file zip, rồi vào Upload annotations, chọn định dạng "Ultralytics YOLO Detection 1.0".
+      Sửa xong, xuất lại cùng định dạng và lấy các file labels/train/*.txt.
+  SAM, SAM 2   https://github.com/facebookresearch/segment-anything
+               https://github.com/facebookresearch/sam2
+      Có sẵn trong AnyLabeling (mục Auto) và CVAT (mục AI Tools), giúp kéo box sát thân
+      xe nhanh hơn.
+
+Sửa xong, chạy lệnh sau tại thư mục gốc của repo:
+  python3 tools/pack_labels.py to_label/round1
+Nếu sửa bằng CVAT, thêm tuỳ chọn --yolo-dir <thư mục labels/train do CVAT xuất ra>.
