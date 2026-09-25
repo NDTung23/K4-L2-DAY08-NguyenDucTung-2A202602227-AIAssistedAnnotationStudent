@@ -1,0 +1,7 @@
+round,frame_id,object,action,rule_or_reason
+1,frame_0099.jpg,xe bị cây che gần hết chỉ còn 1 đèn pha và ~25% thân xe,added,Vẫn đoán được đường viền thân xe quanh đèn nên vẫn gán nhãn cho phần nhìn thấy theo GUIDELINE_LABEL.md
+1,frame_0107.jpg,xe thứ nhất trong cặp xe đứng sát nhau bị AI gộp vào 1 box to,edited,Hai xe đứng sát nhau phải vẽ hai box riêng không gộp làm một theo GUIDELINE_LABEL.md
+1,frame_0107.jpg,xe thứ hai trong cặp xe đứng sát nhau bị AI bỏ sót,added,Hai xe đứng sát nhau phải vẽ hai box riêng không gộp làm một theo GUIDELINE_LABEL.md
+1,frame_0182.jpg,xe thứ nhất trong cụm 3 xe sát nhau bị AI gộp vào 1 box to,edited,Ba xe đứng sát nhau phải tách thành ba box riêng theo GUIDELINE_LABEL.md
+1,frame_0182.jpg,xe thứ hai trong cụm 3 xe sát nhau bị AI bỏ sót,added,Ba xe đứng sát nhau phải tách thành ba box riêng theo GUIDELINE_LABEL.md
+1,frame_0182.jpg,xe thứ ba trong cụm 3 xe sát nhau bị AI bỏ sót,added,Ba xe đứng sát nhau phải tách thành ba box riêng theo GUIDELINE_LABEL.md
